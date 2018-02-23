@@ -5,8 +5,14 @@ dna_data = '>SaFtsZ_12-316 ATGAATCACAAAGTGCATCATCATCATCATCATCTGCAGGAGAATCTTTATTT
 
 URL='https://web.expasy.org/cgi-bin/translate/dna_aa'
 headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-payload = {'pre_text': dna_data }
+payload = {'pre_text' : dna_data, 'output' : 'Compact ("M", "-", no spaces)', 'code' : 'Standard'}
 res = requests.request('POST', URL, headers=headers, data=payload)
 
-print(res.text)
+#print(res.text)
 
+soup = BeautifulSoup(res.text, 'lxml') #要素を抽出
+post_texts = [a.get_text().replace('\n', '') for a in soup.find_all('pre')]
+forword = post_texts[:3]
+reverse = post_texts[3:]
+print(forword)
+print(reverse)
