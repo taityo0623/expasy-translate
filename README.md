@@ -1,3 +1,6 @@
+# 概要
+塩基配列をExPASyに投げてアミノ酸配列に翻訳する非公式ツールです。
+
 ## requirements
 python >~ 3.5.0
 
@@ -13,4 +16,12 @@ bin/dna-translate input_file
 or
 ```sh
 bin/dna-translate input_file output_file
+```
+出力ファイル名を省略すると入力ファイル名の拡張子がcsvとなって出力されます。
+
+## Output format(CSV)
+```csv
+reading frame(forword or reverse), frame number(1 ~ 3), the amino acid sequence \n
+reading frame(forword or reverse), frame number(1 ~ 3), the amino acid sequence \n
+...
 ```
