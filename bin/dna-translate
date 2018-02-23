@@ -1,0 +1,10 @@
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+if [ $# -gt 0 ] && [ $# -lt 3 ]; then
+  if [ $# -eq 1 ]; then
+    python "${SCRIPT_DIR}/../src/translate.py" $1
+  else
+    python "${SCRIPT_DIR}/../src/translate.py" $1 $2
+  fi
+else
+  echo "dna-translate input_file [output_file]"
+fi
