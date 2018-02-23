@@ -1,5 +1,6 @@
 # 概要
 塩基配列をExPASyに投げてアミノ酸配列に翻訳する非公式ツールです。
+
 ExPASy - Translate: https://web.expasy.org/translate/
 
 ## requirements
